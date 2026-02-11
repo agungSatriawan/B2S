@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Site Progress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-light p-3">
+
+    <div class="container-fluid">
+        <h4 class="mb-3">📡 Site Progress</h4>
+
+        <!-- TABLE LIST -->
+        <div class="card">
+            <div class="card-body table-responsive">
+                <table class="table table-sm table-bordered table-hover" id="siteTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>PID</th>
+                            <th>Site ID TSEL</th>
+                            <th>Site Name Tenant</th>
+                            <th>Tinggi Tower</th>
+                            <th>Kandidat</th>
+                            <th>Lat</th>
+                            <th>Long</th>
+                            <th>General Status</th>
+                            <th>Detail Status</th>
+                            <th>Remarks Daily</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- diisi via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+<!-- MODAL EDIT -->
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">✏️ Edit Site Progress</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <!-- TABS -->
+                <ul class="nav nav-tabs" id="formTabs">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">General</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">CME</button>
+                    </li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                            data-bs-target="#tab3">SITAC</button></li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                            data-bs-target="#tab4">Material</button></li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                            data-bs-target="#tab5">Dokumen</button></li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                            data-bs-target="#tab6">Progress</button></li>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
+                            data-bs-target="#tab7">Final</button></li>
+                </ul>
+
+                <!-- TAB CONTENT -->
+                <div class="tab-content border p-3 mt-2">
+
+                    <!-- TAB 1 -->
+                    <div class="tab-pane fade show active" id="tab1">
+                        <div class="row g-2">
+                            <div class="col-md-3">
+                                <label>PID</label>
+                                <input type="text" id="PID" class="form-control" />
+                            </div>
+                            <div class="col-md-3">
+                                <label>Site ID TSEL</label>
+                                <input type="text" id="Site_ID_Tsel" class="form-control" />
+                            </div>
+                            <div class="col-md-3">
+                                <label>TP</label>
+                                <input type="text" id="tp" class="form-control" />
+                            </div>
+                            <div class="col-md-3">
+                                <label>Status</label>
+                                <select id="status" class="form-select">
+                                    <option>Planning</option>
+                                    <option>On Progress</option>
+                                    <option>Done</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2 -->
+                    <div class="tab-pane fade" id="tab2">
+                        <div class="row g-2">
+                            <div class="col-md-3">
+                                <label>CME Start</label>
+                                <input type="date" id="cme_start" class="form-control" />
+                            </div>
+                            <div class="col-md-3">
+                                <label>CME Finish</label>
+                                <input type="date" id="cme_finish" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab3">SITAC</div>
+                    <div class="tab-pane fade" id="tab4">Material</div>
+                    <div class="tab-pane fade" id="tab5">Dokumen</div>
+                    <div class="tab-pane fade" id="tab6">Progress</div>
+                    <div class="tab-pane fade" id="tab7">Final</div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-success" id="btnSave">💾 Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
