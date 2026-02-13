@@ -51,8 +51,6 @@ function openModal(data) {
     document.getElementById("regional").value = data.Regional;
     document.getElementById("prov").value = data.Propinsi;
     document.getElementById("kabkot").value = data.Kota_Kabupaten;
-<<<<<<< HEAD
-=======
     document.getElementById("Lat_NOM").value = data.Lat_NOM;
     document.getElementById("Acses_Jalan").value = data.Acses_Jalan;
     document.getElementById("distance").value = data['Distance_(Meter)'];
@@ -70,8 +68,7 @@ function openModal(data) {
     document.getElementById("FP_Paid_Date").value = data['FP_Paid_Date'];
     document.getElementById("Luas_Lahan").value = data['Luas_Lahan/Expand_lahan'];
     document.getElementById("telp").value = data['Nomor_Telepon_LL_/_Kuasa'];
-    document.getElementById("PKS_Status").value = data['PKS_Status'];
->>>>>>> ddae1d762bf099ffb0bb55af569fd18dff4933c8
+    document.getElementById("PKS_Status").value = data['PKS_Status'];s
 
     const modal = new bootstrap.Modal(
         document.getElementById("editModal")
