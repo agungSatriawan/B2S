@@ -24,8 +24,8 @@ function renderTable() {
       <td>${row.PID}</td>
       <td>${row.Site_ID_Tsel}</td>
       <td>${row.Site_Name_Tenant}</td>
-      <td>${row.Tinggi_Tower}</td>
-      <td>${row['Kandidat_Terpilih_(P/Q/R/Candidate_Reject)']}</td>
+      <td>${row['Tinggi Tower']}</td>
+      <td>${row['Kandidat Terpilih (P/Q/R/Candidate Reject)']}</td>
       <td>${row['Lat_(NEW)']}</td>
       <td>${row['Long_(NEW)']}</td>
       <td>${row.General_Status_SACME}</td>
@@ -45,8 +45,12 @@ loadData();
 function openModal(data) {
     document.getElementById("PID").value = data.PID;
     document.getElementById("Site_ID_Tsel").value = data.Site_ID_Tsel;
-    document.getElementById("tp").value = data.site_name;
-    document.getElementById("status").value = data.status;
+    document.getElementById("site_name").innerHTML = data.Site_Name_Tenant;
+    document.getElementById("site_names").value = data.Site_Name_Tenant;
+    document.getElementById("tenant").value = data.Tenant;
+    document.getElementById("regional").value = data.Regional;
+    document.getElementById("prov").value = data.Propinsi;
+    document.getElementById("kabkot").value = data.Kota_Kabupaten;
 
     const modal = new bootstrap.Modal(
         document.getElementById("editModal")
