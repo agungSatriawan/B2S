@@ -45,11 +45,12 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title">✏️ Edit Site Progress</h5>
+                <h5 class="modal-title">✏️ Edit Site Progress SITE : <span id="site_name"></span></h5>
                 <button class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
             <div class="modal-body">
+               
 
                 <!-- TABS -->
                 <ul class="nav nav-tabs" id="formTabs">
@@ -57,7 +58,7 @@
                         <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1">General</button>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">CME</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2">Datek</button>
                     </li>
                     <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
                             data-bs-target="#tab3">SITAC</button></li>
@@ -77,26 +78,35 @@
                     <!-- TAB 1 -->
                     <div class="tab-pane fade show active" id="tab1">
                         <div class="row g-2">
-                            <div class="col-md-3">
+                            <div class="col">
                                 <label>PID</label>
                                 <input type="text" id="PID" class="form-control" />
                             </div>
-                            <div class="col-md-3">
+                            <div class="col">
                                 <label>Site ID TSEL</label>
                                 <input type="text" id="Site_ID_Tsel" class="form-control" />
                             </div>
-                            <div class="col-md-3">
-                                <label>TP</label>
-                                <input type="text" id="tp" class="form-control" />
+                            <div class="col">
+                                <label>Site Name</label>
+                                <input type="text" id="site_names" class="form-control site_name" />
                             </div>
-                            <div class="col-md-3">
-                                <label>Status</label>
-                                <select id="status" class="form-select">
-                                    <option>Planning</option>
-                                    <option>On Progress</option>
-                                    <option>Done</option>
-                                </select>
+                            <div class="col">
+                                <label>Tenant</label>
+                                <input type="text" id="tenant" class="form-control" />
                             </div>
+                            <div class="col">
+                                <label>Regional</label>
+                                <input type="text" id="regional" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Provinsi</label>
+                                <input type="text" id="prov" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <label>Kabupaten/Kota</label>
+                                <input type="text" id="kabkot" class="form-control" />
+                            </div>
+                           
                         </div>
                     </div>
 
