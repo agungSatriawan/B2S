@@ -51,6 +51,27 @@ function openModal(data) {
     document.getElementById("regional").value = data.Regional;
     document.getElementById("prov").value = data.Propinsi;
     document.getElementById("kabkot").value = data.Kota_Kabupaten;
+<<<<<<< HEAD
+=======
+    document.getElementById("Lat_NOM").value = data.Lat_NOM;
+    document.getElementById("Acses_Jalan").value = data.Acses_Jalan;
+    document.getElementById("distance").value = data['Distance_(Meter)'];
+    document.getElementById("Long_NOM").value = data.Long_NOM;
+    document.getElementById("status_lahan").value = data.Status_Lahan;
+    document.getElementById("Harga_Sewa_Lahan_NET").value = data.Harga_Sewa_Lahan_NET;
+    document.getElementById("kandidat_terpilih").value = data['Kandidat Terpilih (P/Q/R/Candidate Reject)'];
+    document.getElementById("Masa_Sewa").value = data['Masa_Sewa_(thn)'];
+    document.getElementById("Harga_Sewa_Lahan_Inc").value = data['Harga_Sewa_Lahan_Inc._Pajak'];
+    document.getElementById("lat_new").value = data['Lat_(NEW)'];
+    document.getElementById("Pemilik_Lahan").value = data['Pemilik_Lahan'];
+    document.getElementById("DP_Request").value = data['DP_Request_(Date)'];
+    document.getElementById("long_new").value = data['Long_(NEW)'];
+    document.getElementById("Penerima_Kuasa").value = data['Penerima_Kuasa'];
+    document.getElementById("FP_Paid_Date").value = data['FP_Paid_Date'];
+    document.getElementById("Luas_Lahan").value = data['Luas_Lahan/Expand_lahan'];
+    document.getElementById("telp").value = data['Nomor_Telepon_LL_/_Kuasa'];
+    document.getElementById("PKS_Status").value = data['PKS_Status'];
+>>>>>>> ddae1d762bf099ffb0bb55af569fd18dff4933c8
 
     const modal = new bootstrap.Modal(
         document.getElementById("editModal")
