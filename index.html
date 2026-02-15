@@ -16,19 +16,19 @@
         <!-- TABLE LIST -->
         <div class="card">
             <div class="card-body table-responsive">
-                <table class="table table-sm table-bordered table-hover" id="siteTable">
+                <table class="table table table-bordered table-hover" id="siteTable">
                     <thead class="table-dark">
                         <tr>
-                            <th>PID</th>
-                            <th>Site ID TSEL</th>
-                            <th>Site Name Tenant</th>
-                            <th>Tinggi Tower</th>
-                            <th>Kandidat</th>
-                            <th>Lat</th>
-                            <th>Long</th>
-                            <th>General Status</th>
-                            <th>Detail Status</th>
-                            <th>Remarks Daily</th>
+                            <th class="text-center align-middle">PID</th>
+                            <th class="text-center align-middle">Site ID TSEL</th>
+                            <th class="text-center align-middle">Site Name Tenant</th>
+                            <th class="text-center align-middle">Tinggi Tower</th>
+                            <th class="text-center align-middle">Kandidat</th>
+                            <th class="text-center align-middle">Lat</th>
+                            <th class="text-center align-middle">Long</th>
+                            <th class="text-center align-middle">General Status</th>
+                            <th class="text-center align-middle">Detail Status</th>
+                            <th class="text-center align-middle">Remarks Daily</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -426,7 +426,60 @@
                                 </div>
                                 <label class="col-sm-2 col-form-label">Detail_Status_SACME</label>
                                 <div class="col-sm-2">
-                                    <input type="text" id="Detail_Status_SACME" class="form-control" />
+                                    <!-- <input type="text" id="Detail_Status_SACME" class="form-control" /> -->
+                                    <select name="" id="Detail_Status_SACME" class="form-control">
+                                    <option value="01. On Air">01. On Air</option>
+                                    <option value="02. BAST CME DONE">02. BAST CME DONE</option>
+                                    <option value="03. BAST SITAC DONE">03. BAST SITAC DONE</option>
+                                    <option value="04. BAST SACME NY">04. BAST SACME NY</option>
+                                    <option value="05. BAST SACME DONE">05. BAST SACME DONE</option>
+                                    <option value="06. ATP DONE">06. ATP DONE</option>
+                                    <option value="07. RFI">07. RFI</option>
+                                    <option value="08. SOFT RFI">08. SOFT RFI</option>
+                                    <option value="09. CME">09. CME</option>
+                                    <option value="09.a PLN DONE">09.a PLN DONE</option>
+                                    <option value="09. b ME DONE">09. b ME DONE</option>
+                                    <option value="09.c ME OG">09.c ME OG</option>
+                                    <option value="09.d ERECTION DONE">09.d ERECTION DONE</option>
+                                    <option value="09.e ERECTION OG">09.e ERECTION OG</option>
+                                    <option value="09.f CURRING DONE">09.f CURRING DONE</option>
+                                    <option value="09.g CURRING OG">09.g CURRING OG</option>
+                                    <option value="09.h POURING DONE">09.h POURING DONE</option>
+                                    <option value="09.i POURING OG">09.i POURING OG</option>
+                                    <option value="09.j REBBARING DONE">09.j REBBARING DONE</option>
+                                    <option value="09.k REBBARING OG">09.k REBBARING OG</option>
+                                    <option value="09.l EXCAVATION DONE">09.l EXCAVATION DONE</option>
+                                    <option value="09.m EXCAVATION OG">09.m EXCAVATION OG</option>
+                                    <option value="09.n Site Opening/Clearing">09.n Site Opening/Clearing</option>
+                                    <option value="10. RFC">10. RFC</option>
+                                    <option value="10.a IMB DONE">10.a IMB DONE</option>
+                                    <option value="10.b IMB OG">10.b IMB OG</option>
+                                    <option value="11. SITAC 2">11. SITAC 2</option>
+                                    <option value="11.a RFC DONE">11.a RFC DONE</option>
+                                    <option value="11.b APD DONE">11.b APD DONE</option>
+                                    <option value="11.c APD OG">11.c APD OG</option>
+                                    <option value="11.d SOIL/HAMMER DONE">11.d SOIL/HAMMER DONE</option>
+                                    <option value="11.e SOIL/HAMMER OG">11.e SOIL/HAMMER OG</option>
+                                    <option value="11.f REKOM CAMAT DONE">11.f REKOM CAMAT DONE</option>
+                                    <option value="11.g REKOM CAMAT OG">11.g REKOM CAMAT OG</option>
+                                    <option value="11. h REKOM LURAH DONE">11. h REKOM LURAH DONE</option>
+                                    <option value="11. I REKOM LURAH OG">11. I REKOM LURAH OG</option>
+                                    <option value="11. j IW DONE">11. j IW DONE</option>
+                                    <option value="11.k IW OG">11.k IW OG</option>
+                                    <option value="11. l BAN BAK DONE">11. l BAN BAK DONE</option>
+                                    <option value="11.m BAN BAK OG">11.m BAN BAK OG</option>
+                                    <option value="12. VALIDASI DONE">12. VALIDASI DONE</option>
+                                    <option value="12.VALIDASI OG">12.VALIDASI OG</option>
+                                    <option value="12. TSSR DONE">12. TSSR DONE</option>
+                                    <option value="13. TSSR OG">13. TSSR OG</option>
+                                    <option value="14. REHUNTING">14. REHUNTING</option>
+                                    <option value="15. HUNTING">15. HUNTING</option>
+                                    <option value="16. HOLD">16. HOLD</option>
+                                    <option value="17. DROP">17. DROP</option>
+                                    <option value="18. PKS OG">18. PKS OG</option>
+                                    <option value="19. PKS DONE">19. PKS DONE</option>
+
+                                    </select>
                                 </div>
 
                             </div>
@@ -441,7 +494,7 @@
                                 </div>
                                 <label class="col-sm-2 col-form-label">General_Status_SACME</label>
                                 <div class="col-sm-2">
-                                    <input type="text" id="General_Status_SACME" class="form-control" />
+                                    <input type="text" id="General_Status_SACME" class="form-control" disabled/>
                                 </div>
 
                             </div>
@@ -533,6 +586,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js"></script>
+
     <script src="js/app.js"></script>
 
 </body>
