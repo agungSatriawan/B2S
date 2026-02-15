@@ -1,10 +1,93 @@
 
 const tableBody = document.querySelector("tbody");
 
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwYSZwM11hz_Xj8m8AKQTGuSMBbnZT_vVNfTZ3BkCUy-QtTzKSnGEBtqSqEFUDKuVi7XQ/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx9hlQMfR3z8YlDvIL245Qs7BkdixOfXLbUB1kC55ovLllN9irSSbhSqbNMUy8f7bLetQ/exec";
 
 let sheetData = [];
-
+const mapping = {
+    "PID": "PID",
+    "Site_ID_Tsel": "Site_ID_Tsel",
+    "Site_Name_Tenant": "site_names",
+    "Tenant": "tenant",
+    "Regional": "regional",
+    "Propinsi": "prov",
+    "Kota_Kabupaten": "kabkot",
+    "Kandidat Terpilih (P/Q/R/Candidate Reject)": "kandidat_terpilih",
+    "SIS_SPMK": "SIS_SPMK",
+    "MK_SPMK": "MK_SPMK",
+    "Mitra_SACME_SPMK": "Mitra_SACME_SPMK",
+    "Ketinggian Tower SPMK": "ketinggian_tower_spmk",
+    "Ketinggian Tower Aktual": "Ketinggian_tower_aktual",
+    "Remarks": "Remarks",
+    "Status_DRM": "Status_DRM",
+    "DRM_DATE": "DRM_DATE",
+    "Lat_NOM": "Lat_NOM",
+    "Long_NOM": "Long_NOM",
+    "Lat_(NEW)": "lat_new",
+    "Long_(NEW)": "long_new",
+    "Distance_(Meter)": "distance",
+    "Alamat_NEW": "Alamat_NEW",
+    "Milestone": "Milestone",
+    "Ket": "Ket",
+    "WO": "wo",
+    "Tanggal_WO": "Tanggal_WO",
+    "Remarks_NOD_Tower": "Remarks_NOD_Tower",
+    "Fabrikasi": "Fabrikasi",
+    "Waspang": "Waspang",
+    "Target_RFC": "Target_RFC",
+    "Target_RFI": "Target_RFI",
+    "Detail_Status_SACME": "Detail_Status_SACME",
+    "General_Status_SACME": "General_Status_SACME",
+    "Remarks_Daily": "Remarks_Daily",
+    "Status_Lahan": "status_lahan",
+    "Acses_Jalan": "Acses_Jalan",
+    "Luas_Lahan/Expand_lahan": "Luas_Lahan",
+    "Pemilik_Lahan": "Pemilik_Lahan",
+    "Penerima_Kuasa": "Penerima_Kuasa",
+    "Nomor_Telepon_LL_/_Kuasa": "telp",
+    "Harga_Sewa_Lahan_NET": "Harga_Sewa_Lahan_NET",
+    "Harga_Sewa_Lahan_Inc._Pajak": "Harga_Sewa_Lahan_Inc",
+    "Masa_Sewa_(thn)": "Masa_Sewa",
+    "DP_Request_(Date)": "DP_Request",
+    "DP_Paid_(Date)": "DP_Paid_Date",
+    "Status_FP_Request": "Status_FP_Request",
+    "FP_Paid_Date": "FP_Paid_Date",
+    "PKS_Status": "PKS_Status",
+    "PKS_Date": "PKS_Date",
+    "Tanggal_KOM_Mitra": "Tanggal_KOM_Mitra",
+    "Tanggal_DRM": "Tanggal_DRM",
+    "Jumlah_Cand.": "Jumlah_Cand",
+    "No_Cand.": "No_Cand",
+    "Coordinate_Validate_Date": "Coordinate_Validate_Date",
+    "BAN/BAK": "ban",
+    "IW": "iw",
+    "Rekom_Lurah": "Rekom_Lurah",
+    "Rekom_Camat": "Rekom_Camat",
+    "Soil_Test_/Hammer_Test": "soil_test",
+    "APD": "apd",
+    "RFC_(Date)": "rfc_date",
+    "SKOM_(Date)": "skom_date",
+    "Excavation": "Excavation",
+    "Bore_Pile": "Bore_Pile",
+    "Pouring": "Pouring",
+    "Erection": "Erection",
+    "RBS_Foundation": "RBS_Foundation",
+    "ME_Date": "ME_Date",
+    "F_&_Y": "f&y",
+    "PSB_Req": "PSB_Req",
+    "PLN_Done": "PLN_Done",
+    "Power_(KVA)": "power_kva",
+    "Nama_Pelanggan": "Nama_Pelanggan",
+    "ID_Pelanggan": "ID_Pelanggan",
+    "RFI_Announce_Tenant": "RFI_Announce_Tenant",
+    "RFI_Date": "RFI_Date",
+    "ATP_Internal": "ATP_Internal",
+    "Request_ATP": "Request_ATP",
+    "Plan_ATP": "Plan_ATP",
+    "ATP_External": "ATP_External",
+    "Target_RFI_Tsel": "Target_RFI_Tsel",
+    "PM": "PM"
+};
 async function loadData() {
     const res = await fetch(WEB_APP_URL);
     const data = await res.json();
@@ -43,41 +126,66 @@ loadData();
 
 
 function openModal(data) {
-    document.getElementById("PID").value = data.PID;
-    document.getElementById("Site_ID_Tsel").value = data.Site_ID_Tsel;
+  
     document.getElementById("site_name").innerHTML = data.Site_Name_Tenant;
-    document.getElementById("site_names").value = data.Site_Name_Tenant;
-    document.getElementById("tenant").value = data.Tenant;
-    document.getElementById("regional").value = data.Regional;
-    document.getElementById("prov").value = data.Propinsi;
-    document.getElementById("kabkot").value = data.Kota_Kabupaten;
-    document.getElementById("Lat_NOM").value = data.Lat_NOM;
-    document.getElementById("Acses_Jalan").value = data.Acses_Jalan;
-    document.getElementById("distance").value = data['Distance_(Meter)'];
-    document.getElementById("Long_NOM").value = data.Long_NOM;
-    document.getElementById("status_lahan").value = data.Status_Lahan;
-    document.getElementById("Harga_Sewa_Lahan_NET").value = data.Harga_Sewa_Lahan_NET;
-    document.getElementById("kandidat_terpilih").value = data['Kandidat Terpilih (P/Q/R/Candidate Reject)'];
-    document.getElementById("Masa_Sewa").value = data['Masa_Sewa_(thn)'];
-    document.getElementById("Harga_Sewa_Lahan_Inc").value = data['Harga_Sewa_Lahan_Inc._Pajak'];
-    document.getElementById("lat_new").value = data['Lat_(NEW)'];
-    document.getElementById("Pemilik_Lahan").value = data['Pemilik_Lahan'];
-    document.getElementById("DP_Request").value = data['DP_Request_(Date)'];
-    document.getElementById("long_new").value = data['Long_(NEW)'];
-    document.getElementById("Penerima_Kuasa").value = data['Penerima_Kuasa'];
-    document.getElementById("FP_Paid_Date").value = data['FP_Paid_Date'];
-    document.getElementById("Luas_Lahan").value = data['Luas_Lahan/Expand_lahan'];
-    document.getElementById("telp").value = data['Nomor_Telepon_LL_/_Kuasa'];
-    document.getElementById("PKS_Status").value = data['PKS_Status'];s
+    Object.keys(mapping).forEach(function (key) {
 
-    const modal = new bootstrap.Modal(
-        document.getElementById("editModal")
-    );
-    modal.show();
+        const elementId = mapping[key];
+
+        if (elementId && document.getElementById(elementId)) {
+            document.getElementById(elementId).value = data[key] ?? "";
+        }
+
+    });
+
+        const modal = new bootstrap.Modal(
+            document.getElementById("editModal")
+        );
+        modal.show();
+
 }
 
 
 let selectedRow = null;
+
+document.getElementById("btnSave").addEventListener("click", async function () {
+
+    const updatedData = {};
+
+    Object.keys(mapping).forEach(function (key) {
+        const elementId = mapping[key];
+        const el = document.getElementById(elementId);
+
+        if (el) {
+            updatedData[key] = el.value;
+        }
+    });
+
+    try {
+
+        const formData = new URLSearchParams();
+        formData.append("data", JSON.stringify(updatedData));
+
+        const response = await fetch(WEB_APP_URL, {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+            alert("✅ Data berhasil diupdate!");
+            loadData();
+        }
+
+    } catch (error) {
+        console.error(error);
+        alert("❌ Gagal update data");
+    }
+
+});
+
+
 
 
 
